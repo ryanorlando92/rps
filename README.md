@@ -64,8 +64,16 @@ RPS vs computer
 
 -return outcome
     -user win
+        -increment user score
+        -check if game over
+            -new round
+            -game over & restart
     -user loses
+        -increment pc score
+        -check if game over
+            -new round
+            -game over & restart
 
 extra?
 -button selectors vs free text input
--increment score?
+
