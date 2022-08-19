@@ -104,6 +104,17 @@ function game() {
     }
 }
 
-//assignment wants to run the same selection 5 times,
-// Id prefer to make 5 selections, maybe ill code that with
-// a selection box when i add the buttons and html output for less tedious games
+
+
+/*
+add a winner calc at end of 5 rounds 
+
+
+ add the buttons and html output for less tedious games
+
+&& a button that says im done playing for now that then determines winner
+or a text box for input of how many games to play to?
+
+restart game function (button) that resets to fresh
+
+*/
