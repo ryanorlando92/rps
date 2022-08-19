@@ -12,7 +12,7 @@ function getCpuChoice() {
     }   else if (float > 33.33) {
         return 'PAPER';
     }   else {
-        return 'SCISSORSgetPlayerChoice()getPlayerChoice()';
+        return 'SCISSORS';
     };
 }
 
@@ -92,7 +92,13 @@ function playRound() {
 }
 
 // next up, game() function to keep track of score
-
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+        console.log( `After ${roundsPlayed} rounds of play, the score is:`);
+        console.log( `Player 1: ${playerScore}  |  Computer: ${cpuScore}`);
+    }
+}
 
 //assignment wants to run the same selection 5 times,
 // Id prefer to make 5 selections, maybe ill code that with
