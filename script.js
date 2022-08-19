@@ -45,6 +45,10 @@ function playRound() {
     let cpuSelection = getCpuChoice();
     let playerSelection = getPlayerChoice();
 
+    console.log( `You chose ${playerSelection}`)
+    console.log( 'Rock, Paper, Scissors, SHOOT')
+    console.log( `The Computer chose ${cpuSelection}!` )
+
     if (cpuSelection === playerSelection) {
         console.log( 'Tie!' );
     
@@ -75,5 +79,5 @@ function playRound() {
             console.log( 'Paper beats rock! YOU WIN');
         } else { console.log( 'something has gone wrong' ) };
     } else { console.log( 'something has gone wrong' ) };
-    
+
 }
