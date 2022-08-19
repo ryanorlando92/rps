@@ -31,4 +31,41 @@ Feel free to create more “helper” functions if you think it would be useful.
 
 #Pseudocode
 
+RPS vs computer
 
+-computer makes random selection
+    -generate random int
+    -equally separate ints into rock, paper, scissor categories
+    -return and store selection
+
+-user makes selection
+    -take input from user
+    -convert string to account for caps variation
+    -check string for valid input
+    -store valid input or reject invalid input
+
+-evaluate round
+    -user selection = computer selection -> tie!
+    -if user selection is rock 
+        -is pc paper?
+            -user loses
+        -is pc scissors?
+            -user wins
+    -if user selection is paper
+        -is pc rock?
+            -user wins
+        -is pc scissors?
+            -user loses
+    -if user selection is scissors
+        -is pc rock?
+            -user loses
+        -is pc paper?
+            -user wins
+
+-return outcome
+    -user win
+    -user loses
+
+extra?
+-button selectors vs free text input
+-increment score?
