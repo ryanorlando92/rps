@@ -1,5 +1,6 @@
-let cpuChoice = null;
-let PlayerChoice = null;
+let cpuScore = 0;
+let playerScore = 0;
+let roundsPlayed = 0;
 
 function getCpuChoice() {
 
@@ -56,28 +57,43 @@ function playRound() {
         // should you use a ternary operator here for succintness?
         if (cpuSelection === 'PAPER') {
             console.log( 'Paper beats rock! YOU LOSE' );
+            cpuScore++;
 
         } else if (cpuSelection === 'SCISSORS') {
             console.log( 'Rock beats scissors! YOU WIN' );
+            playerScore++;
 
         } else { console.log( 'somthing has gone wrong' ) };
     
     } else if (playerSelection === 'SCISSORS') {
         if (cpuSelection === 'PAPER') {
             console.log( 'Scissors beats paper! YOU WIN' );
+            playerScore++;
 
         } else if (cpuSelection === 'ROCK') {
             console.log( 'Rock beats scissors! YOU LOSE' );
+            cpuScore++;
 
         } else { console.log( 'something has gone wrong' ) };
 
     } else if (playerSelection === 'PAPER') {
         if (cpuSelection === 'SCISSORS') {
             console.log( 'Scissors beats paper! YOU LOSE');
+            cpuScore++;
 
         } else if (cpuSelection === 'ROCK') {
             console.log( 'Paper beats rock! YOU WIN');
+            playerScore++;
+
         } else { console.log( 'something has gone wrong' ) };
     } else { console.log( 'something has gone wrong' ) };
 
+    roundsPlayed++;
 }
+
+// next up, game() function to keep track of score
+
+
+//assignment wants to run the same selection 5 times,
+// Id prefer to make 5 selections, maybe ill code that with
+// a selection box when i add the buttons and html output for less tedious games
