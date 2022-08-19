@@ -1,6 +1,8 @@
 let cpuScore = 0;
 let playerScore = 0;
 let roundsPlayed = 0;
+let numTies = 0;
+
 
 function getCpuChoice() {
 
@@ -52,6 +54,7 @@ function playRound() {
 
     if (cpuSelection === playerSelection) {
         console.log( 'Tie!' );
+        numTies++;
     
     } else if (playerSelection === 'ROCK') {
         // should you use a ternary operator here for succintness?
@@ -95,6 +98,7 @@ function playRound() {
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
+        console.log('');
         console.log( `After ${roundsPlayed} rounds of play, the score is:`);
         console.log( `Player 1: ${playerScore}  |  Computer: ${cpuScore}`);
     }
