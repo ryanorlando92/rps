@@ -16,8 +16,10 @@ function getCpuChoice() {
 }
 
 function getPlayerChoice() {
+
     const userInput = prompt( 'Rock, Paper, or Scissors?' );
-    if ( userInput.toUpperCase() = 'ROCK' || 'PAPER' || 'SCISSOR' ) {
+
+    if ( userInput.toUpperCase() === ('ROCK' || 'PAPER' || 'SCISSOR') ) {
         return userInput.toUpperCase();
     } else {
         alert( 'You have made an invalid selection' );
