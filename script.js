@@ -19,10 +19,25 @@ function getPlayerChoice() {
 
     const userInput = prompt( 'Rock, Paper, or Scissors?' );
 
-    if ( userInput.toUpperCase() === ('ROCK' || 'PAPER' || 'SCISSOR') ) {
-        return userInput.toUpperCase();
-    } else {
-        alert( 'You have made an invalid selection' );
+    switch ( userInput.toUpperCase() ) {
+        case 'ROCK':
+            return 'ROCK';
+            break;
+        
+        case 'PAPER':
+            return 'PAPER';
+            break;
+
+        case 'SCISSORS':
+            return 'SCISSORS';
+            break;
+
+        case 'SCISSOR':
+            return 'SCISSORS';
+            break;
+        
+        default:
+            alert( 'You have made an invalid selection' );
     };
 } 
 
