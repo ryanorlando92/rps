@@ -1,3 +1,4 @@
+// initialize score variables
 let cpuScore = 0;
 let playerScore = 0;
 let roundsPlayed = 0;
@@ -6,7 +7,7 @@ let numTies = 0;
 
 function getCpuChoice() {
 
-    const float = Math.random() * 100;
+    const float = Math.random() * 100; //generate random number between 0 and 99.99 and equally distribute the 3 options
 
     if (float > 66.67) {
         return 'ROCK';
@@ -102,14 +103,26 @@ function game() {
         console.log( `After ${roundsPlayed} rounds of play, the score is:`);
         console.log( `Player 1: ${playerScore}  |  Computer: ${cpuScore}  |  Tie: ${numTies}`);
     }
+
+    if (playerScore > cpuScore) {
+        console.log( 'You win the game!' );
+    }
+    else if (playerScore === cpuScore) {
+        console.log( 'You tied the computer!');
+    }
+    else { console.log( 'You just lost the game!' )};
 }
 
+function resetGame() {
+    let roundsPlayed =  0;
+    let playerScore =   0;
+    let cpuScore    =   0;
+    let numTies =   0;
+    console.log( 'Game has been reset!' );
+};
 
 
 /*
-add a winner calc at end of 5 rounds 
-
-
  add the buttons and html output for less tedious games
 
 && a button that says im done playing for now that then determines winner
