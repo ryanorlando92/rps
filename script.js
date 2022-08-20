@@ -102,6 +102,7 @@ function game() {
         console.log('');
         console.log( `After ${roundsPlayed} rounds of play, the score is:`);
         console.log( `Player 1: ${playerScore}  |  Computer: ${cpuScore}  |  Tie: ${numTies}`);
+        console.log('');
     }
 
     if (playerScore > cpuScore) {
