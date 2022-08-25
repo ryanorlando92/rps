@@ -169,4 +169,6 @@ main screen Play game to 5 || custom game || unlimited
 
  a button that says im done playing for now that then determines winner
 
+ deactivate rps buttons on gameover
+
 */

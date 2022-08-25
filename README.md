@@ -74,6 +74,3 @@ RPS vs computer
             -new round
             -game over & restart
 
-extra?
--button selectors vs free text input
-
