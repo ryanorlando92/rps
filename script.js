@@ -18,6 +18,17 @@ scissors.addEventListener('click', () => {
     playRound('SCISSORS');
 });
 
+const container = document.querySelector('.container');
+const playerOutput = document.createElement('p');
+    playerOutput.classList.add('playerOutput');
+const cpuOutput = document.createElement('p');
+    cpuOutput.classList.add('cpuOutput');
+const roundResult = document.createElement('p');
+    roundResult.classList.add('roundResult');
+const score = document.createElement('p');
+    score.classList.add('score');
+const gameOver = document.createElement('p');
+    gameOver.classList.add('gameOver');
 
 
 function getCpuChoice() {
@@ -64,51 +75,68 @@ function playRound(playerSelection) {
     let cpuSelection = getCpuChoice();
     // let playerSelection = getPlayerChoice(); 
 
-    console.log( `You chose ${playerSelection}`)
-    console.log( 'Rock, Paper, Scissors, SHOOT')
-    console.log( `The Computer chose ${cpuSelection}!` )
+    playerOutput.textContent = `You chose ${playerSelection}`;
+    cpuOutput.textContent = `Rock, Paper, Scissors, SHOOT! \n
+        The Computer chose ${cpuSelection}!`;
 
     if (cpuSelection === playerSelection) {
-        console.log( 'Tie!' );
+        roundResult.textContent = 'Tie!' ;
         numTies++;
     
     } else if (playerSelection === 'ROCK') {
        
         if (cpuSelection === 'PAPER') {
-            console.log( 'Paper beats rock! YOU LOSE' );
+            roundResult.textContent = 'Paper beats rock! YOU LOSE' ;
             cpuScore++;
 
         } else if (cpuSelection === 'SCISSORS') {
-            console.log( 'Rock beats scissors! YOU WIN' );
+            roundResult.textContent = 'Rock beats scissors! YOU WIN' ;
             playerScore++;
 
         } else { console.log( 'somthing has gone wrong' ) };
     
     } else if (playerSelection === 'SCISSORS') {
         if (cpuSelection === 'PAPER') {
-            console.log( 'Scissors beats paper! YOU WIN' );
+            roundResult.textContent = 'Scissors beats paper! YOU WIN' ;
             playerScore++;
 
         } else if (cpuSelection === 'ROCK') {
-            console.log( 'Rock beats scissors! YOU LOSE' );
+            roundResult.textContent = 'Rock beats scissors! YOU LOSE' ;
             cpuScore++;
 
         } else { console.log( 'something has gone wrong' ) };
 
     } else if (playerSelection === 'PAPER') {
         if (cpuSelection === 'SCISSORS') {
-            console.log( 'Scissors beats paper! YOU LOSE');
+            roundResult.textContent = 'Scissors beats paper! YOU LOSE' ;
             cpuScore++;
 
         } else if (cpuSelection === 'ROCK') {
-            console.log( 'Paper beats rock! YOU WIN');
+            roundResult.textContent = 'Paper beats rock! YOU WIN' ;
             playerScore++;
 
         } else { console.log( 'something has gone wrong' ) };
     } else { console.log( 'something has gone wrong' ) };
 
     roundsPlayed++;
+    score.innerHTML = `Rounds Played: ${roundsPlayed} <br/>
+    Player Wins: ${playerScore}<br/>
+    CPU Wins: ${cpuScore}<br/>
+    Number of Ties: ${numTies}`;
+
+    container.appendChild(playerOutput);
+    container.appendChild(cpuOutput);
+    container.appendChild(roundResult);
+    container.appendChild(score);
+
 }
+
+
+
+
+
+
+
 
 
 /* game function for console-based play
