@@ -133,10 +133,10 @@ function roundEnd() {
     container.appendChild(roundResult);
     container.appendChild(score);
 
-    if ((playerScore === 5) || (cpuScore === 5)) restartGame();
+    if ((playerScore === 5) || (cpuScore === 5)) endGame();
 }
 
-function restartGame() {
+function endGame() {
     gameOver.innerHTML = "GAME OVER <br/>";
     if (playerScore > cpuScore) {
         gameOver.innerHTML += "<br/>YOU WIN THE MATCH!<br/>";
@@ -145,13 +145,26 @@ function restartGame() {
     gameOver.innerHTML +="Would you like to play again? <br/>";
     gameOver.innerHTML +="<button class='button restart'>Restart Game</button>";
     container.appendChild(gameOver);
+    const restartButton = document.querySelector('.restart');
+    restartButton.addEventListener('click', restartGame);
 }    
 
 
+
+function restartGame() {
+cpuScore = 0;
+playerScore = 0;
+roundsPlayed = 0;
+numTies = 0;
+playerOutput.remove();
+cpuOutput.remove();
+roundResult.remove();
+score.remove();
+gameOver.remove();
+}
+
+
 /*
-
-
-
 game function for console-based play
 
 function game() {
