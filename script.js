@@ -4,6 +4,21 @@ let playerScore = 0;
 let roundsPlayed = 0;
 let numTies = 0;
 
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+
+rock.addEventListener('click', () => {
+    playRound('ROCK');
+});
+paper.addEventListener('click', () => {
+    playRound('PAPER');
+});
+scissors.addEventListener('click', () => {
+    playRound('SCISSORS');
+});
+
+
 
 function getCpuChoice() {
 
@@ -45,9 +60,9 @@ function getPlayerChoice() {
     };
 } 
 
-function playRound() {
+function playRound(playerSelection) {
     let cpuSelection = getCpuChoice();
-    let playerSelection = getPlayerChoice();
+    // let playerSelection = getPlayerChoice(); 
 
     console.log( `You chose ${playerSelection}`)
     console.log( 'Rock, Paper, Scissors, SHOOT')
@@ -58,7 +73,7 @@ function playRound() {
         numTies++;
     
     } else if (playerSelection === 'ROCK') {
-        // should you use a ternary operator here for succintness?
+       
         if (cpuSelection === 'PAPER') {
             console.log( 'Paper beats rock! YOU LOSE' );
             cpuScore++;
@@ -95,7 +110,9 @@ function playRound() {
     roundsPlayed++;
 }
 
-// next up, game() function to keep track of score
+
+/* game function for console-based play
+
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
@@ -120,7 +137,7 @@ function resetGame() {
     let cpuScore    =   0;
     let numTies =   0;
     console.log( 'Game has been reset!' );
-};
+}; */
 
 
 /*
