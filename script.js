@@ -119,6 +119,10 @@ function playRound(playerSelection) {
     } else { console.log( 'something has gone wrong' ) };
 
     roundsPlayed++;
+    roundEnd();
+}
+
+function roundEnd() {
     score.innerHTML = `Rounds Played: ${roundsPlayed} <br/>
     Player Wins: ${playerScore}<br/>
     CPU Wins: ${cpuScore}<br/>
@@ -129,17 +133,26 @@ function playRound(playerSelection) {
     container.appendChild(roundResult);
     container.appendChild(score);
 
+    if ((playerScore === 5) || (cpuScore === 5)) restartGame();
 }
 
+function restartGame() {
+    gameOver.innerHTML = "GAME OVER <br/>";
+    if (playerScore > cpuScore) {
+        gameOver.innerHTML += "<br/>YOU WIN THE MATCH!<br/>";
+    } else gameOver.innerHTML += "<br/>YOU LOST THE MATCH!<br/>";
+    
+    gameOver.innerHTML +="Would you like to play again? <br/>";
+    gameOver.innerHTML +="<button class='button restart'>Restart Game</button>";
+    container.appendChild(gameOver);
+}    
+
+
+/*
 
 
 
-
-
-
-
-
-/* game function for console-based play
+game function for console-based play
 
 function game() {
     for (let i = 0; i < 5; i++) {
@@ -165,15 +178,12 @@ function resetGame() {
     let cpuScore    =   0;
     let numTies =   0;
     console.log( 'Game has been reset!' );
-}; */
+};
 
-
-/*
  add the buttons and html output for less tedious games
 
 && a button that says im done playing for now that then determines winner
 or a text box for input of how many games to play to?
 
 restart game function (button) that resets to fresh
-
 */
