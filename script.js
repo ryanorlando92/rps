@@ -73,7 +73,6 @@ function getPlayerChoice() {
 
 function playRound(playerSelection) {
     let cpuSelection = getCpuChoice();
-    // let playerSelection = getPlayerChoice(); 
 
     playerOutput.textContent = `You chose ${playerSelection}`;
     cpuOutput.textContent = `Rock, Paper, Scissors, SHOOT! \n
@@ -165,38 +164,9 @@ gameOver.remove();
 
 
 /*
-game function for console-based play
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        playRound();
-        console.log('');
-        console.log( `After ${roundsPlayed} rounds of play, the score is:`);
-        console.log( `Player 1: ${playerScore}  |  Computer: ${cpuScore}  |  Tie: ${numTies}`);
-        console.log('');
-    }
+main screen Play game to 5 || custom game || unlimited
 
-    if (playerScore > cpuScore) {
-        console.log( 'You win the game!' );
-    }
-    else if (playerScore === cpuScore) {
-        console.log( 'You tied the computer!');
-    }
-    else { console.log( 'You just lost the game!' )};
-}
+ a button that says im done playing for now that then determines winner
 
-function resetGame() {
-    let roundsPlayed =  0;
-    let playerScore =   0;
-    let cpuScore    =   0;
-    let numTies =   0;
-    console.log( 'Game has been reset!' );
-};
-
- add the buttons and html output for less tedious games
-
-&& a button that says im done playing for now that then determines winner
-or a text box for input of how many games to play to?
-
-restart game function (button) that resets to fresh
 */
